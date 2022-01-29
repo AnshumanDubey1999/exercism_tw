@@ -3,17 +3,12 @@ class RnaTranscription {
 
     String transcribe(String dnaStrand) {
         int size = dnaStrand.length();
+        String from = "GCTA", to = "CGAU";
         StringBuilder sb = new StringBuilder(size);
         for(int i = 0; i < size; i++){
             char c = dnaStrand.charAt(i);
-            if(c=='G')
-                sb.append('C');
-            if(c=='C')
-                sb.append('G');
-            if(c=='T')
-                sb.append('A');
-            if(c=='A')
-                sb.append('U');
+            int index = from.indexOf(c);
+            sb.append(to.charAt(index));
         }
         return sb.toString();
             

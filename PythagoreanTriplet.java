@@ -36,6 +36,8 @@ class PythagoreanTriplet{
     }
 
     public boolean equals(Object p){
+        if(!(p instanceof PythagoreanTriplet))
+            return false;
         PythagoreanTriplet pt = (PythagoreanTriplet) p;
         return (pt.a==this.a && pt.b==this.b && pt.c==this.c);
     }
